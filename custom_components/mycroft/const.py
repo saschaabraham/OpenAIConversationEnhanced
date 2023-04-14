@@ -48,16 +48,11 @@ Be careful to always respond with syntactically valid JSON, and ONLY JSON, inclu
 
 HOME_INFO_TEMPLATE = """
 Here is the current state of devices in the house. Use this to answer questions about the state of the smart home.
-{%- for area in areas %}
-  {%- set area_info = namespace(printed=false) %}
-  {%- for entity in area_entities(area.name) -%}
-      {%- if not area_info.printed %}
-{{ area.name }}:
-        {%- set area_info.printed = true %}
-      {%- endif %}
-  - {{entity}} is {{states(entity)}}
-  {%- endfor %}
-{%- endfor %}
+
+Arbeitszimmer:
+  Arbeitszimmer Temperatur: {{ states('sensor.temperatur_arbeitszimmer') }}°C
+  Schalter Drucker: {{ states('switch.drucker') }} (Can switched on and off)
+  
 """
 CONF_MODEL = "model"
 DEFAULT_MODEL = "gpt-3.5-turbo"
