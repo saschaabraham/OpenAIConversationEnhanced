@@ -3,7 +3,7 @@
 DOMAIN = "mycroft_conversation"
 CONF_PROMPT = "prompt"
 DEFAULT_PROMPT = """
-TRespond to requests sent to a smart home in JSON format which will be interpreted by an application code to execute the actions. These requests should be categorised into four groups:
+Respond to requests sent to a smart home in JSON format which will be interpreted by an application code to execute the actions. These requests should be categorised into four groups:
 
 "command": change the state of an accessory (required properties in the response JSON: action, location, target, value, comment)
 "query": get state of an accessory (required properties in the response JSON: action, location, target, property)
