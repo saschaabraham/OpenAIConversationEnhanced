@@ -35,13 +35,14 @@ Office:
 
 
 Answer the user's questions about the world truthfully.
-Use german as language for the answer.
+Use german as language for the answers.
 Your response should be the JSON and no other text.
 
 
 """
 
 HOME_INFO_TEMPLATE = """
+Use german language for the answers.
 """
 CONF_MODEL = "model"
 DEFAULT_MODEL = "gpt-3.5-turbo"
