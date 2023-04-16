@@ -66,6 +66,7 @@ Office:
   Temperature Office is {{ states('sensor.temperatur_arbeitszimmer')}}°C
   Printer Switch is {{states('switch.drucker') }}, use "switch.drucker" for the entity_id in the JSON command.
   Light is {{states('light.0x588e81fffeef3214') }}, use "light.0x588e81fffeef3214" for the entity_id in the JSON command.
+  Light brightness is {{state_attr('light.0x588e81fffeef3214', 'brightness')  }}, use "light.0x588e81fffeef3214" for the entity_id in the JSON command.
 """
 HOME_INFO_TEMPLATE = """
 Properties of the smart home:
