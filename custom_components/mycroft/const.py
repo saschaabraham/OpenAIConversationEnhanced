@@ -56,10 +56,9 @@ Answer the user's questions about the world truthfully.
 Use german as language for the answers.
 Your response should be the JSON and no other text.
 
-
 """
 
-DEFAULT_HOME_INFO_TEMPLATE = """
+HOME_INFO_TEMPLATE = """
 Properties of the smart home:
 
 Office:
@@ -68,10 +67,7 @@ Office:
   Light is {{states('light.0x588e81fffeef3214') }}, use "light.0x588e81fffeef3214" for the entity_id in the JSON command.
   Light brightness is {{state_attr('light.0x588e81fffeef3214', 'brightness')  }}, use "light.0x588e81fffeef3214" for the entity_id in the JSON command.
 """
-HOME_INFO_TEMPLATE = """
-Properties of the smart home:
 
-"""
 CONF_MODEL = "model"
 DEFAULT_MODEL = "gpt-3.5-turbo"
 CONF_MAX_TOKENS = "max_tokens"
