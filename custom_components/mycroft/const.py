@@ -49,12 +49,6 @@ In case of commands, the needed "comment" property is an comment from you that c
 
 Be careful to always respond with syntactically valid JSON, and ONLY JSON, including braces, brackets for lists, wrapping text in quotation marks and no trailing commas.
 
-Properties of the smart home:
-
-Office:
-  Temperature Office is {{ states('sensor.temperatur_arbeitszimmer')}}°C
-  Printer Switch is {{states('switch.drucker') }}, use "switch.drucker" for the entity_id in the JSON command.
-  Light is {{states('light.0x588e81fffeef3214') }}, use "light.0x588e81fffeef321" for the entity_id in the JSON command.
 
 
 
@@ -66,7 +60,12 @@ Your response should be the JSON and no other text.
 """
 
 HOME_INFO_TEMPLATE = """
-Use german language for the answers.
+Properties of the smart home:
+
+Office:
+  Temperature Office is {{ states('sensor.temperatur_arbeitszimmer')}}°C
+  Printer Switch is {{states('switch.drucker') }}, use "switch.drucker" for the entity_id in the JSON command.
+  Light is {{states('light.0x588e81fffeef3214') }}, use "light.0x588e81fffeef3214" for the entity_id in the JSON command.
 """
 CONF_MODEL = "model"
 DEFAULT_MODEL = "gpt-3.5-turbo"
