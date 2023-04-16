@@ -139,7 +139,7 @@ def mycroft_config_option_schema(options: MappingProxyType[str, Any]) -> dict:
         options = DEFAULT_OPTIONS
     return {
         vol.Required(CONF_PROMPT, default=options.get(CONF_PROMPT)): TemplateSelector(),
-        vol.Required(HOME_INFO_TEMPLATE, default=options.get(CONF_PROMPT)): TemplateSelector(),
+        vol.Required(HOME_INFO_TEMPLATE, default=options.get(DEFAULT_HOME_INFO_TEMPLATE)): TemplateSelector(),
         vol.Required(CONF_MODEL, default=options.get(CONF_MODEL)): str,
         vol.Required(CONF_MAX_TOKENS, default=options.get(CONF_MAX_TOKENS)): int,
         vol.Required(CONF_TOP_P, default=options.get(CONF_TOP_P)): NumberSelector(
