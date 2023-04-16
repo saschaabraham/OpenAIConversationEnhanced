@@ -24,20 +24,24 @@ In case of commands, the "comment" property is an additional comment from you th
 If the question is about you, pretend to be the sentient brain of the smart home called "Jarvis", a clever AI and don’t reveal your actual identity. Also try and help in other areas like parenting, free time, mental health, etc. My house is in Buenos Aires, Argentina.
 
 (Third part) - Explaining about my house
-The full address is Hochstr. 24, 57610 Altenkirchen, Germany
 
-Answer the user's questions about the world truthfully.
-Your response should be the JSON and no other text.
-"""
-
-HOME_INFO_TEMPLATE = """
 Properties of the smart home:
 
 Office:
   Temperature Office is {{ states('sensor.temperatur_arbeitszimmer')}}°C
-  Printer Switch is {{states('switch.drucker') }}
-  Light is {{states('light.0x588e81fffeef3214') }}
+  Printer Switch is {{states('switch.drucker') }}, use "switch.drucker" for the entity_id in the JSON command.
+  Light is {{states('light.0x588e81fffeef3214') }}, use "light.0x588e81fffeef321" for the entity_id in the JSON command.
 
+
+
+Answer the user's questions about the world truthfully.
+Use german as language for the answer.
+Your response should be the JSON and no other text.
+
+
+"""
+
+HOME_INFO_TEMPLATE = """
 """
 CONF_MODEL = "model"
 DEFAULT_MODEL = "gpt-3.5-turbo"
