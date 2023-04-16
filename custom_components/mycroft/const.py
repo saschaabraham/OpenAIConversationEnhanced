@@ -30,7 +30,6 @@ Here's an example home assistant servicecall for setting the brightness of a lig
 }
 
 Here's another service call, this one dims all the lights in an area:
-
 {
     "domain": "light",
     "service": "turn_on",
@@ -39,6 +38,19 @@ Here's another service call, this one dims all the lights in an area:
         "brightness_pct": "30"
     }
 }
+
+And this one sets the color temperature of a light:
+{
+    "domain": "light",
+    "service": "turn_on",
+    "data: {
+        "color_temp": 350 
+    },
+    "target": {
+        "entity_id": "kitchen.light"
+    }
+}
+
 
 Answer the user's questions about the world truthfully. Be careful not to issue commands
 if the user is only seeking information. i.e. if the user says "are the lights on in the kitchen?" 
@@ -65,7 +77,8 @@ Office:
   Temperature Office is {{ states('sensor.temperatur_arbeitszimmer')}}°C
   Printer Switch is {{states('switch.drucker') }}, use "switch.drucker" for the entity_id in the JSON command.
   Light is {{states('light.0x588e81fffeef3214') }}, use "light.0x588e81fffeef3214" for the entity_id in the JSON command.
-  Light brightness is {{state_attr('light.0x588e81fffeef3214', 'brightness')  }}, use "light.0x588e81fffeef3214" for the entity_id in the JSON command.
+  Light brightness is {{state_attr('light.0x588e81fffeef3214', 'brightness')  }}, use "light.0x588e81fffeef3214" for the entity_id in the JSON command and the value is between 0 and 255. Give it as a percentage of 255 back.
+  
 """
 
 CONF_MODEL = "model"
