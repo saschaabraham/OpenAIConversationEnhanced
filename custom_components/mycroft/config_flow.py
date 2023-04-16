@@ -33,8 +33,7 @@ from .const import (
     DEFAULT_TEMPERATURE,
     DEFAULT_TOP_P,
     DOMAIN,
-    HOME_INFO_TEMPLATE,
-    DEFAULT_HOME_INFO_TEMPLATE
+    HOME_INFO_TEMPLATE
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -51,8 +50,7 @@ DEFAULT_OPTIONS = types.MappingProxyType(
         CONF_MODEL: DEFAULT_MODEL,
         CONF_MAX_TOKENS: DEFAULT_MAX_TOKENS,
         CONF_TOP_P: DEFAULT_TOP_P,
-        CONF_TEMPERATURE: DEFAULT_TEMPERATURE,
-        HOME_INFO_TEMPLATE: DEFAULT_HOME_INFO_TEMPLATE
+        CONF_TEMPERATURE: DEFAULT_TEMPERATURE
     }
 )
 
@@ -139,7 +137,6 @@ def mycroft_config_option_schema(options: MappingProxyType[str, Any]) -> dict:
         options = DEFAULT_OPTIONS
     return {
         vol.Required(CONF_PROMPT, default=options.get(CONF_PROMPT)): TemplateSelector(),
-        vol.Required(HOME_INFO_TEMPLATE, default=options.get(DEFAULT_HOME_INFO_TEMPLATE)): TemplateSelector(),
         vol.Required(CONF_MODEL, default=options.get(CONF_MODEL)): str,
         vol.Required(CONF_MAX_TOKENS, default=options.get(CONF_MAX_TOKENS)): int,
         vol.Required(CONF_TOP_P, default=options.get(CONF_TOP_P)): NumberSelector(
