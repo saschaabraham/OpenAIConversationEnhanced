@@ -33,7 +33,8 @@ from .const import (
     DEFAULT_TEMPERATURE,
     DEFAULT_TOP_P,
     DOMAIN,
-    HOME_INFO_TEMPLATE
+    HOME_INFO_TEMPLATE,
+    DEFAULT_HOME_INFO_TEMPLATE
 )
 
 _LOGGER = logging.getLogger(__name__)
