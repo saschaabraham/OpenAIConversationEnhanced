@@ -59,13 +59,17 @@ Your response should be the JSON and no other text.
 
 """
 
-HOME_INFO_TEMPLATE = """
+DEFAULT_HOME_INFO_TEMPLATE = """
 Properties of the smart home:
 
 Office:
   Temperature Office is {{ states('sensor.temperatur_arbeitszimmer')}}°C
   Printer Switch is {{states('switch.drucker') }}, use "switch.drucker" for the entity_id in the JSON command.
   Light is {{states('light.0x588e81fffeef3214') }}, use "light.0x588e81fffeef3214" for the entity_id in the JSON command.
+"""
+HOME_INFO_TEMPLATE = """
+Properties of the smart home:
+
 """
 CONF_MODEL = "model"
 DEFAULT_MODEL = "gpt-3.5-turbo"
