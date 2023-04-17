@@ -1,5 +1,5 @@
 {
-  "name": "OpenAIEnhancedConversation",
+  "name": "OpenAIEnhancedConversationSA",
   "render_readme": true,
   "iot_class": "cloud_push",
   "content_in_root": false,
