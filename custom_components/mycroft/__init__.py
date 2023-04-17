@@ -28,6 +28,7 @@ from .const import (
     DEFAULT_TEMPERATURE,
     DEFAULT_TOP_P,
     HOME_INFO_TEMPLATE,
+    DEFAULT_HOME_INFO_TEMPLATE,
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -81,6 +82,7 @@ class OpenAIAgent(conversation.AbstractConversationAgent):
         max_tokens = self.entry.options.get(CONF_MAX_TOKENS, DEFAULT_MAX_TOKENS)
         top_p = self.entry.options.get(CONF_TOP_P, DEFAULT_TOP_P)
         temperature = self.entry.options.get(CONF_TEMPERATURE, DEFAULT_TEMPERATURE)
+        home_info_template=self.entry.options.get(HOME_INFO_TEMPLATE,DEFAULT_HOME_INFO_TEMPLATE)
         new_message = {
             "role": "user",
             "content": user_input.text
@@ -92,7 +94,7 @@ class OpenAIAgent(conversation.AbstractConversationAgent):
             messages = self.history[conversation_id] + [new_message]
         else:
             try:
-                home_info_prompt = self._async_generate_prompt(HOME_INFO_TEMPLATE)
+                home_info_prompt = self._async_generate_prompt(home_info_template)
             except TemplateError as err:
                 _LOGGER.error("Error rendering prompt: %s", err)
                 intent_response = intent.IntentResponse(language=user_input.language)
