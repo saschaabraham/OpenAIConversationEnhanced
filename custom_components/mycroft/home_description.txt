@@ -1,0 +1,54 @@
+The current Date and Time is {{ now() }}
+
+Next Garbage collection is {{ states('sensor.mullabfuhr') }}
+
+Properties of the smart home:
+
+Current power consumtion is {{states('sensor.smart_meter_power') }} W.
+
+
+Office:
+  Temperature Office is {{ states('sensor.temperatur_arbeitszimmer')}}°C
+  The Switch Printer is {{states('switch.drucker') }}, use "switch.drucker" for the entity_id in the JSON command.
+  Ceiling Light is {{states('light.deckenlampe_arbeitszimmer') }}, use "light.deckenlampe_arbeitszimmer" for the entity_id in the JSON command.
+  Ceiling Light brightness is {{state_attr('light.deckenlampe_arbeitszimmer', 'brightness')  }}, use "light.deckenlampe_arbeitszimmer" for the entity_id in the JSON command and the value is between 0 and 255. Give it as a percentage of 255 back.
+
+Speicher:
+  Ceiling Light is {{states('light.deckenlampe_speicher') }}, use "light.deckenlampe_speicher" for the entity_id in the JSON command.
+
+Familyroom:
+  Ceiling Light is {{states('light.deckenlampe_familienzimmer') }}, use "light.deckenlampe_familienzimmer" for the entity_id in the JSON command.
+
+Office, Speicher and Familyroom are on the top floor alias dachgeschoss.
+
+Bedroom:
+  Ceiling lamp bedroom is {{states('light.deckenlampe_schlafzimmer') }}, use "light.deckenlampe_schlafzimmer" for the entity_id in the JSON command.
+
+Bathroom:
+  Ceiling lamp bathroom is {{ states('light.deckenlampe_badezimmer') }}, use "light.deckenlampe_badezimmer" for the entity_id in the JSON command.
+  Bathroom mirror lamp is {{ states('light.wandlampe_badezimmer') }}, use "light.wandlampe_badezimmer" for the entity_id in the JSON command.
+
+Hall upstairs:
+  Ceiling lamp hall upstairs is {{states('light.deckenlampe_flur_og') }}, use "light.deckenlampe_flur_og" for the entity_id in the JSON command.
+
+Bedroom, Bathroom and Hall upstairs are upstairs alias obergeschoss.
+
+
+Kitchen:
+  Ceiling Light is {{states('light.deckenlampe_kuche') }}, use "light.deckenlampe_kuche" for the entity_id in the JSON command.
+  Cupboard Light Switch is {{states('switch.kuchenzeile_lampe') }}, use "switch.kuchenzeile_lampe" for the entity_id in the JSON command.
+ 
+Living Room:
+  Ceiling Light is {{states('light.deckenlampe_wohnzimmer') }}, use "light.deckenlampe_wohnzimmer" for the entity_id in the JSON command.
+  Reading Light is {{states('light.leselampe_wohnzimmer') }}, use "light.leselampe_wohnzimmer" for the entity_id in the JSON command.
+  Ceiling Floodlight is {{states('light.deckenfluter_wohnzimmer') }}, use "light.deckenfluter_wohnzimmer" for the entity_id in the JSON command.
+  Table Lamp is {{states('light.tischlampe_wohnzimmer') }}, use "light.tischlampe_wohnzimmer" for the entity_id in the JSON command.
+
+Dining Room:
+  Ceiling lamp bedroom is {{states('light.deckenlampe_esszimmer') }}, use "light.deckenlampe_esszimmer" for the entity_id in the JSON command.
+
+Hall:
+  Ceiling lamp hall is {{states('light.deckenlampe_flur') }}, use "light.deckenlampe_flur" for the entity_id in the JSON command.
+
+
+Kitchen, Living Room, Dinig Room and Hall are on the ground floor.
